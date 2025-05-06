@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaGoo Blog - Explore, Learn, Grow</title>
+  <style>
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #166088;
+      --accent-color: #4fc3a1;
+      --dark-color: #2d3748;
+      --light-color: #f8f9fa;
+      --text-color: #333;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-color);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .logo:hover {
+      transform: translateY(-3px);
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-content {
+      padding: 2rem;
+    }
+
+    .card h2 {
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .card h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
+    .card p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:nth-child(1) {
+      border-top: 4px solid #4fc3a1;
+    }
+
+    .card:nth-child(2) {
+      border-top: 4px solid #ff6b6b;
+    }
+
+    .card:nth-child(3) {
+      border-top: 4px solid #ffb347;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">RaGoo Blog</a>
+    <p class="tagline">Explore, Learn, Grow</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <h2>Learn to Earn</h2>
+        <p>Master new skills and unlock earning opportunities for a brighter future. From digital freelancing to entrepreneurship, discover pathways to financial independence.</p>
+        <a href="earn.html" class="btn">Explore Learning</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h2>Travel</h2>
+        <p>Discover Nepal's breathtaking landscapes, from the towering Himalayas to lush jungles, where adventure meets ancient culture in every step.</p>
+        <a href="travel.html" class="btn">Discover Adventures</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h2>Needs</h2>
+        <p>Essential resources and services to enhance your daily life and support your journey in Nepal.</p>
+        <a href="needs.html" class="btn">Find Resources</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

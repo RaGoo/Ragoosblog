@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Nepal&#x1f1f3;&#x1f1f5;</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #111108;
+            --secondary-color: #e5e4eb;
+            --accent-color: #200a0b;
+            --dark-color: #040407;
+            --light-color: #f3f7fc;
+            --gray-color: #6c757d;
+            --success-color: #4cc9f0;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 1000%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: rgb(16, 170, 37);
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgb(165, 34, 56);
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?blog,writing') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Featured Posts */
+        .featured-posts {
+            padding: 5rem 0;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .post-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .post-card:hover .post-img img {
+            transform: scale(1.1);
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+
+        .post-excerpt {
+            margin-bottom: 1.5rem;
+            color: var(--gray-color);
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+            gap: 0.8rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 5rem 0;
+            background-color: #f1f3f5;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .newsletter .section-title::after {
+            background-color: white;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 0 25px;
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #2a2a3c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-family: var(--font-heading);
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero {
+                height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo"><p>RaGoo Blog<span><sup>&#x1f1f3;&#x1f1f5;</sup></p></span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="start reading.html">Blog</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero"> 
+        <div class="hero-content">
+            <h1>Discover Inspiring Stories</h1>
+            <p>Explore our collection of thought-provoking articles, tutorials, and creative pieces from passionate writers around the world.</p>
+            <a href="start reading.html" class="btn">Start Reading</a>
+        </div>
+    </section>
+
+    <!-- Featured Posts -->
+    <section class="featured-posts">
+        <div class="container">
+            <h2 class="section-title">Featured Posts</h2>
+            <p>Check out our most popular articles this week</p>
+            
+            <div class="posts-grid">
+                <!-- Post 1 -->
+                <article class="post-card">
+                    <div class="post-img">
+                        <img src="c:\Users\Admin\Desktop\project\images (1).jpeg" alt="Tech post">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                            <span><i class="far fa-comment"></i> 24</span>
+                        </div>
+                        <h3 class="post-title">The Future of Artificial Intelligence</h3>
+                        <p class="post-excerpt">Exploring how AI is transforming industries and what we can expect in the coming decade.</p>
+                        <a href="readmore1.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Post 2 -->
+                <article class="post-card">
+                    <div class="post-img">
+                        <img src="c:\Users\Admin\Desktop\project\images.jpeg" alt="Travel post">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> May 4, 2025</span>
+                            <span><i class="far fa-comment"></i> 10</span>
+                        </div>
+                        <h3 class="post-title">Hidden Gems in Nepal</h3>
+                        <p class="post-excerpt">Discover these breathtaking locations that most tourists don't know about.</p>
+                        <a href="readmore.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Featured Images</h2>
+            <p>Visual stories from our creative community</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="c:\Users\Admin\Desktop\project\mount-temple-at-sunrise-john-elk-iii.jpg" alt="Nature">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Mountain Sunrise</h4>
+                        <p>By  John Elk Iii</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="c:\Users\Admin\Desktop\project\nepal-kathmandu-street-people.jpg" alt="City">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Urban Life</h4>
+                        <p>from internet</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="c:\Users\Admin\Desktop\project\images (5).jpeg" alt="Animal">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Wildlife</h4>
+                        <p>From internet</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="c:\Users\Admin\Desktop\project\kathmandu-nepal-capital-largest-municipality-61618208.webp" alt="Architecture">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Modern Design</h4>
+                        <p> Dreamstime.com </p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <img src="c:\Users\Admin\Desktop\project\Karnali-River.webp" alt="River">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Ocean View</h4>
+                        <p>Karnali River</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="c:\Users\Admin\Desktop\project\Portrait-of-ten-Gurung-warriors-from-Nepal-Benjamin-Simpson-possibly-1.png" alt="Portrait">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Human Emotions</h4>
+                        <p>globalnepalimuseum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest posts and updates directly in your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Connect Blog</h3>
+                    <p>A platform for creative minds to share their stories, ideas, and perspectives with the world.</p>
+                    <div class="social-links">
+                        <a href="start reading.html"><i class="fab fa-facebook-f"></i></a>
+                        <a href="start reading.html"><i class="fab fa-twitter"></i></a>
+                        <a href="start reading.html"><i class="fab fa-instagram"></i></a>
+                        
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="start reading.html">Blog</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="start reading.html">Technology</a></li>
+                        <li><a href="start reading.html">Travel</a></li>
+                        <li><a href="start reading.html">Food</a></li>
+                        <li><a href="start reading.html">Health</a></li>
+                        <li><a href="start reading.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Kaushaltar,Bhaktapur</p>
+                    <p><i class="fas fa-phone"></i> 0000000000</p>
+                    <p><i class="fas fa-envelope"></i>aanilkhadka2228@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 RaaGooBlog. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
