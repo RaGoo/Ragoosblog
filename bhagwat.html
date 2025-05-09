@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Guide to Bhagavad Gita's 18 Chapters</title>
+    <style>
+        :root {
+            --primary: #4b6cb7;
+            --secondary: #182848;
+            --accent: #f9a825;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        h2 {
+            color: var(--secondary);
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        .chapter-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .chapter-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+        .chapter-card:hover {
+            transform: translateY(-5px);
+        }
+        .chapter-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .chapter-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+        .lesson {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        .analogy {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .analogy::before {
+            content: "🌿 ";
+        }
+        .tips {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .quote {
+            font-size: 1.1rem;
+            text-align: center;
+            font-style: italic;
+            color: var(--secondary);
+            margin: 40px 0;
+            padding: 20px;
+            border-left: 3px solid var(--accent);
+            background: #f5f5f5;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            .chapter-container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bhagavad Gita Made Simple</h1>
+        <p>18 Life Lessons from Krishna to Arjuna</p>
+    </header>
+
+    <h2>The 18 Chapters Explained Simply</h2>
+    
+    <div class="chapter-container">
+        <!-- Chapter 1 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 1</div>
+            <div class="chapter-title">Arjuna's Confusion</div>
+            <p><strong>What happens:</strong> Arjuna refuses to fight his own family in the war.</p>
+            <div class="lesson">
+                <strong>Simple lesson:</strong> When faced with tough choices, even brave people get confused.
+            </div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 2</div>
+            <div class="chapter-title">The Soul Never Dies</div>
+            <p><strong>Krishna says:</strong> The soul is like changing clothes – bodies die, but the soul lives forever.</p>
+            <div class="lesson">
+                <strong>Key advice:</strong> Do your duty without worrying about results.
+            </div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 3</div>
+            <div class="chapter-title">Do Your Best, Don't Worry</div>
+            <div class="analogy">
+                Like ants work without stress, humans should work without obsession over rewards.
+            </div>
+            <div class="lesson">
+                <strong>Golden rule:</strong> Work hard, but don't let success/failure control your happiness.
+            </div>
+        </div>
+
+        <!-- Chapter 4 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 4</div>
+            <div class="chapter-title">Learn from Wise People</div>
+            <p><strong>Krishna shares:</strong> He taught this wisdom to ancient sages, now teaching Arjuna.</p>
+            <div class="lesson">
+                <strong>Tip:</strong> Knowledge passed down (like family recipes) is valuable – listen to elders.
+            </div>
+        </div>
+
+        <!-- Chapter 5 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 5</div>
+            <div class="chapter-title">Be in the World, But Not of It</div>
+            <div class="analogy">
+                Be like a lotus leaf – water (worldly problems) can't stick to it.
+            </div>
+            <div class="lesson">
+                <strong>Practice:</strong> Stay calm in chaos by focusing on your inner peace.
+            </div>
+        </div>
+
+        <!-- Chapter 6 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 6</div>
+            <div class="chapter-title">Train Your Mind</div>
+            <div class="analogy">
+                Mind = Monkey: A restless mind jumps everywhere; meditation is the rope to tie it down.
+            </div>
+            <div class="lesson">
+                <strong>Simple start:</strong> Sit quietly 5 mins daily, focus on breathing.
+            </div>
+        </div>
+
+        <!-- Chapter 7 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 7</div>
+            <div class="chapter-title">God is Everywhere</div>
+            <p><strong>Krishna explains:</strong> He's in sunlight, water, the good in people – like sugar in milk (invisible but sweet).</p>
+            <div class="lesson">
+                <strong>Reminder:</strong> See divinity in nature and kindness.
+            </div>
+        </div>
+
+        <!-- Chapter 8 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 8</div>
+            <div class="chapter-title">Think Good, Be Good</div>
+            <div class="lesson">
+                <strong>Death tip:</strong> Your last thoughts shape your next life – so practice positive thinking daily.
+            </div>
+        </div>
+
+        <!-- Chapter 9 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 9</div>
+            <div class="chapter-title">Love is the Shortcut</div>
+            <p><strong>Krishna's secret:</strong> Loving God (or your highest ideal) is easier than complex rituals.</p>
+            <div class="analogy">
+                A child's pure love for parents is enough; no need for fancy gifts.
+            </div>
+        </div>
+
+        <!-- Chapter 10 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 10</div>
+            <div class="chapter-title">God's Special Appearances</div>
+            <p><strong>Krishna says:</strong> He's the best of everything – Himalayas among mountains, OM among words.</p>
+            <div class="analogy">
+                Like seeing "your favorite color everywhere," recognize divinity in excellence.
+            </div>
+        </div>
+
+        <!-- Chapter 11 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 11</div>
+            <div class="chapter-title">Cosmic Vision</div>
+            <p><strong>What Arjuna sees:</strong> Krishna as a giant glowing universe with all beings inside him.</p>
+            <div class="analogy">
+                We're tiny but connected to something infinite – like cells in a body.
+            </div>
+        </div>
+
+        <!-- Chapter 12 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 12</div>
+            <div class="chapter-title">Easy Devotion</div>
+            <p><strong>Krishna prefers:</strong> Simple devotees who try their best over showy experts.</p>
+            <div class="lesson">
+                <strong>Tip:</strong> Pray in your own words; no need for perfect Sanskrit.
+            </div>
+        </div>
+
+        <!-- Chapter 13 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 13</div>
+            <div class="chapter-title">Body vs Soul</div>
+            <div class="analogy">
+                Body = car, Soul = driver. Don't mistake the vehicle for the passenger.
+            </div>
+        </div>
+
+        <!-- Chapter 14 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 14</div>
+            <div class="chapter-title">Three Nature Types</div>
+            <p><strong>People are like:</strong></p>
+            <ul>
+                <li><strong>Sattva</strong> (calm/wise = coconut – hard outside, sweet inside)</li>
+                <li><strong>Rajas</strong> (active/angry = lemon – sour)</li>
+                <li><strong>Tamas</strong> (lazy/dark = onion – stings eyes)</li>
+            </ul>
+            <div class="lesson">
+                <strong>Goal:</strong> Increase sattva (goodness).
+            </div>
+        </div>
+
+        <!-- Chapter 15 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 15</div>
+            <div class="chapter-title">The World Tree</div>
+            <div class="analogy">
+                Life is like a tree – roots (God), branches (world), birds (souls). Cut attachment to taste the fruit (peace).
+            </div>
+        </div>
+
+        <!-- Chapter 16 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 16</div>
+            <div class="chapter-title">Good vs Bad Habits</div>
+            <p><strong>Good traits:</strong> Honesty, cleanliness, kindness (like planting mango seeds).</p>
+            <p><strong>Bad traits:</strong> Greed, pride, cruelty (like planting thorn bushes).</p>
+        </div>
+
+        <!-- Chapter 17 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 17</div>
+            <div class="chapter-title">Three Kinds of Faith</div>
+            <p><strong>Food example:</strong></p>
+            <ul>
+                <li><strong>Sattvic:</strong> Fresh fruits (pure energy)</li>
+                <li><strong>Rajasic:</strong> Spicy chips (hyper energy)</li>
+                <li><strong>Tamasic:</strong> Stale food (lazy energy)</li>
+            </ul>
+            <div class="lesson">
+                <strong>Choose sattvic</strong> for clarity.
+            </div>
+        </div>
+
+        <!-- Chapter 18 -->
+        <div class="chapter-card">
+            <div class="chapter-number">Chapter 18</div>
+            <div class="chapter-title">Let Go & Let God</div>
+            <div class="analogy">
+                Do your best, then surrender results – like a student studies hard but leaves marks to teacher.
+            </div>
+            <div class="lesson">
+                <strong>Ultimate secret:</strong> "Give up all worries, just remember Me – I'll free you." (18:66)
+            </div>
+        </div>
+    </div>
+
+    <div class="tips">
+        <h2>3 Everyday Tips from the Gita</h2>
+        <ol>
+            <li><strong>Work like Arjuna:</strong> Focus on effort, not obsession over results.</li>
+            <li><strong>Meditate like Chapter 6:</strong> Train your mind daily.</li>
+            <li><strong>Love like Chapter 12:</strong> Simple, sincere devotion works best.</li>
+        </ol>
+    </div>
+
+    <div class="quote">
+        "The Gita is like a parent's advice – practical, loving, and timeless."
+    </div>
+
+    <footer>
+        <p>May these lessons bring you peace and wisdom in daily life.</p>
+    </footer>
+</body>
+</html>
