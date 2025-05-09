@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RaGoo Blog - Explore insightful articles on Nepali share market, Bhagavad Gita, travel, and earning opportunities in Nepal">
   <title>RaGoo Blog - Explore, Learn, Grow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #4a6fa5;
-      --secondary-color: #166088;
-      --accent-color: #4fc3a1;
-      --dark-color: #2d3748;
-      --light-color: #f8f9fa;
-      --text-color: #333;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary-color: #1e40af;
+      --accent-color: #10b981;
+      --accent-dark: #059669;
+      --dark-color: #1f2937;
+      --light-color: #f9fafb;
+      --text-color: #374151;
+      --text-light: #6b7280;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius: 0.5rem;
+      --max-width: 1200px;
     }
 
     * {
@@ -22,20 +33,26 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       line-height: 1.6;
       color: var(--text-color);
       background-color: var(--light-color);
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
       background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
       color: white;
       text-align: center;
-      padding: 2rem 0;
+      padding: 3rem 1rem;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
 
     header::before {
@@ -45,7 +62,14 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+      background: linear-gradient(90deg, var(--accent-color), #3b82f6);
+    }
+
+    .header-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
@@ -64,15 +88,17 @@
     }
 
     .tagline {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       opacity: 0.9;
       font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding: 0 1rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
@@ -80,135 +106,260 @@
 
     .card {
       background-color: white;
-      border-radius: 10px;
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-sm);
       transition: var(--transition);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .card:hover .card-image img {
+      transform: scale(1.05);
     }
 
     .card-content {
-      padding: 2rem;
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .card h2 {
-      color: var(--secondary-color);
+      color: var(--dark-color);
       margin-bottom: 1rem;
-      font-size: 1.8rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .card h2::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background-color: var(--accent-color);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
     }
 
     .card p {
       margin-bottom: 1.5rem;
-      color: #555;
+      color: var(--text-light);
+      flex: 1;
     }
 
     .btn {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
       background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      border-radius: 50px;
+      border-radius: var(--radius);
       font-weight: 600;
       transition: var(--transition);
       border: none;
       cursor: pointer;
       text-align: center;
+      width: fit-content;
     }
 
     .btn:hover {
-      background-color: var(--secondary-color);
+      background-color: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-md);
     }
 
-    .card:nth-child(1) {
-      border-top: 4px solid #4fc3a1;
+    .btn i {
+      margin-left: 0.5rem;
+      transition: var(--transition);
     }
 
-    .card:nth-child(2) {
-      border-top: 4px solid #ff6b6b;
+    .btn:hover i {
+      transform: translateX(3px);
     }
 
-    .card:nth-child(3) {
-      border-top: 4px solid #ffb347;
+    .category-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      z-index: 2;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
     }
 
     @media (max-width: 768px) {
       .container {
         grid-template-columns: 1fr;
-        padding: 1rem;
       }
       
       .logo {
         font-size: 2rem;
       }
+      
+      .tagline {
+        font-size: 1rem;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      animation: fadeIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo">RaGoo Blog</a>
-    <p class="tagline">Explore, Learn, Grow</p>
+    <div class="header-content">
+      <a href="index.html" class="logo">RaGoo Blog</a>
+      <p class="tagline">Explore insightful articles on Nepali share market, Bhagavad Gita, travel, and earning opportunities</p>
+    </div>
   </header>
 
-
-
-   
-     <div class="card">
-      <div class="card-content">
-        <h2>Nepali Share Market</h2>
-        <p>NEPSE Forecast for 2082/83.</p>
-        <a href="share.html" class="btn">Explore Nepse</a>
-      </div>
-    </div>
+  <main>
     <div class="container">
-    <div class="card">
-      <div class="card-content">
-        <h2>Bhagavad Gita</h2>
-        <p>Bhagavad Gita-Summary.</p>
-        <a href="bhagwat.html" class="btn">Explore Bhagavad Gita</a>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Nepal Stock Exchange building">
+          <span class="category-tag">Finance</span>
+        </div>
+        <div class="card-content">
+          <h2>Nepali Share Market Analysis</h2>
+          <p>Comprehensive NEPSE forecast for 2082/83 with sector-wise growth projections and investment strategies.</p>
+          <a href="share.html" class="btn">Read Analysis <i>→</i></a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Bhagavad Gita book">
+          <span class="category-tag">Spirituality</span>
+        </div>
+        <div class="card-content">
+          <h2>Bhagavad Gita Simplified</h2>
+          <p>18 chapters explained in simple terms with practical life lessons from Krishna's teachings.</p>
+          <a href="bhagwat.html" class="btn">Explore Wisdom <i>→</i></a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Nepal mountain landscape">
+          <span class="category-tag">Travel</span>
+        </div>
+        <div class="card-content">
+          <h2>Discover Nepal's Hidden Gems</h2>
+          <p>From the Himalayas to jungles, explore Nepal's breathtaking landscapes and rich culture.</p>
+          <a href="travel.html" class="btn">Start Exploring <i>→</i></a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Person working on laptop">
+          <span class="category-tag">Business</span>
+        </div>
+        <div class="card-content">
+          <h2>Learn to Earn in Nepal</h2>
+          <p>Practical guides to financial independence through digital skills and entrepreneurship.</p>
+          <a href="earn.html" class="btn">Learn More <i>→</i></a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Resources checklist">
+          <span class="category-tag">Resources</span>
+        </div>
+        <div class="card-content">
+          <h2>Essential Resources for Nepal</h2>
+          <p>Curated tools and services to enhance your daily life and support your journey.</p>
+          <a href="needs.html" class="btn">Find Resources <i>→</i></a>
+        </div>
       </div>
     </div>
-     <div class="card">
-      <div class="card-content">
-        <h2>Travel</h2>
-        <p>Discover Nepal's breathtaking landscapes, from the towering Himalayas to lush jungles, where adventure meets ancient culture in every step.</p>
-        <a href="travel.html" class="btn">Discover Adventures</a>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="logo">RaGoo Blog</a>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
+      <p class="copyright">© 2023 RaGoo Blog. All rights reserved.</p>
     </div>
-  <div class="container">
-    <div class="card">
-      <div class="card-content">
-        <h2>Learn to Earn</h2>
-        <p>Master new skills and unlock earning opportunities for a brighter future. From digital freelancing to entrepreneurship, discover pathways to financial independence.</p>
-        <a href="earn.html" class="btn">Explore Learning</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-content">
-        <h2>Needs</h2>
-        <p>Essential resources and services to enhance your daily life and support your journey in Nepal.</p>
-        <a href="needs.html" class="btn">Find Resources</a>
-      </div>
-    </div>
-  </div>
+  </footer>
 </body>
 </html>
